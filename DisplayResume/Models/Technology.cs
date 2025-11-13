@@ -7,7 +7,7 @@ namespace DisplayResume.Models
 	public class Technology
 	{
 		public string Description { get; set; } = string.Empty;
-		public EnumFocus Focus { get; set; } = EnumFocus.NetworkTool;
+		public EnumFocus Focus { get; set; } = EnumFocus.None;
 		public string Name { get; set; } = string.Empty;
 		public string ProperName { get; set; } = string.Empty;
 		public bool Retired { get; set; } = false;

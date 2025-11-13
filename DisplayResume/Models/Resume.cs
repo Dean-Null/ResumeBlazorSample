@@ -8,7 +8,7 @@ namespace DisplayResume.Models
 	{
 		private List<Organization> organizations = [];
 
-		private DateTime timelimit = DateTime.Now.AddYears(-15);
+		private DateTime timelimit = DateTime.Now.AddYears(-10);
 
 		public Resume()
 		{
@@ -27,30 +27,18 @@ namespace DisplayResume.Models
 			set => organizations = value;
 		}
 		public List<Technology> Technologies { get; set; } = [];
-
 		public List<string> UsedDescriptors { get; set; } = [];
-
-		public List<string> Qualifications { get; set; } = [
-			"",
-		];
-
+		public List<string> Qualifications { get; set; } = [];
 		public Dictionary<string, string> TechDict { get; set; }
 
 		public string GetMyName()
 		{
-			return Contact.FullName();
+			return Contact.FirstLastName();
 		}
 
 		public string GetMyAddress()
 		{
 			return Contact.Address.USAddress();
-		}
-
-		public string GetTechnologyFocusString(EnumFocus focusValue)
-		{
-			string[] arrayList = Technologies.Where(tech => tech.Focus == focusValue).Select(tech => tech.Name).ToArray();
-
-			return string.Join(", ", arrayList).ToString();
 		}
 
 		public void GetTimeLimtedOrganizations()
@@ -80,7 +68,7 @@ namespace DisplayResume.Models
 				List<Technology> focusTech = GetTechnologyFocus(techFocus);
 				foreach (Technology technology in focusTech)
 				{
-					stringBuilder.Append($"{technology.Name}");
+					stringBuilder.Append(technology.Name);
 					techlist += $"{technology.Name}";
 					if (!technology.Equals(focusTech.Last()))
 					{
@@ -116,11 +104,11 @@ namespace DisplayResume.Models
 
 			sb.Append(Contact.ToString());
 			sb.AppendLine(Summary);
-			sb.AppendLine("Experience:\r\n");
+			sb.AppendLine("Experience:");
 			Organizations.ForEach(org => sb.AppendLine(org.ToString()));
-			sb.AppendLine("Education:\r\n");
+			sb.AppendLine("Education:");
 			Education.ForEach(edu => sb.AppendLine(edu.ToString()));
-			sb.AppendLine("Skills:\r\n");
+			sb.AppendLine("Skills:");
 			Technologies.Where(tech => !tech.Retired).ToList().ForEach(tech => sb.AppendLine(tech.ToString()));
 
 			return sb.ToString();

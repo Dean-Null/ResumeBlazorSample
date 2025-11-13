@@ -6,44 +6,21 @@ namespace DisplayResume.Models
 {
 	public class Position
 	{
-		public Position(
-			bool automated = false,
-			bool development = false,
-			bool devOps = false,
-			bool manual = false
-		)
-		{
-			Automated = automated;
-			Development = development;
-			DevOps = devOps;
-			Manual = manual;
-		}
+		public Position() { }
 
 		public Position(
 			Dictionary<int, string> duties,
 			Dictionary<int, string> preselectedDuties,
-			EnumPositionRole role,
-			bool automated = false,
-			bool development = false,
-			bool devOps = false,
-			bool manual = false,
-			bool teambased = false
-			) : this(automated, development, devOps, manual)
+			EnumPositionRole role
+			)
 		{
-			Teambased = teambased;
 			Role = role;
 			Duties = duties;
 			PreselectedDuties = preselectedDuties;
 
 		}
 
-		public bool Automated { get; set; } = false;
-		public bool Development { get; set; } = false;
-		public bool DevOps { get; set; } = false;
-		public bool Manual { get; set; } = false;
-		public bool Teambased { get; set; } = false;
-		public EnumPositionRole Role { get; set; } = EnumPositionRole.QualityAssuranceTester;
-
+		public EnumPositionRole Role { get; set; } = EnumPositionRole.None;
 		public Dictionary<int, string> Duties { get; set; } = [];
 		public Dictionary<int, string> PreselectedDuties { get; set; } = [];
 		public Dictionary<int, string> DutiesPool { get; set; } = [];
@@ -56,12 +33,7 @@ namespace DisplayResume.Models
 		public override bool Equals(object? obj)
 		{
 			return obj is Position position &&
-				   Role == position.Role &&
-				   Automated == position.Automated &&
-				   Development == position.Development &&
-				   DevOps == position.DevOps &&
-				   Manual == position.Manual &&
-				   Teambased == position.Teambased;
+				   Role == position.Role;
 		}
 
 		public override int GetHashCode()

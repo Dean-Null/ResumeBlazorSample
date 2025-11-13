@@ -23,7 +23,7 @@ namespace DisplayResume.Models
 		[MaxLength(64)]
 		public string EmailAddress { get; set; } = string.Empty;
 
-		public string FullName() => $"{FirstName} {MiddleName} {LastName}";
+		public string FirstLastName() => $"{FirstName} {LastName}";
 
 		public override bool Equals(object? obj)
 		{

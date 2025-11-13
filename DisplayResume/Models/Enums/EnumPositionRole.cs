@@ -4,7 +4,7 @@ namespace DisplayResume.Models.Enums
 {
 	public enum EnumPositionRole
 	{
-		[Display(Name = "Quality Assurance Tester", ShortName = "QATR")]
-		QualityAssuranceTester = 0,
+		[Display(Name = "None", ShortName = "NA")]
+		None = 0,
 	}
 }

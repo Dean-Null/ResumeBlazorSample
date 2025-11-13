@@ -4,12 +4,14 @@ namespace DisplayResume.Models.Enums
 {
 	public enum EnumFocus
 	{
+		[Display(Name = "None", ShortName = "NA")]
+		None = 0,
 		[Display(Name = "Application Protocol Interface", ShortName = "API")]
-		API = 0,
+		API = 1,
 		[Display(Name = "Continuous Integration Continuous Development", ShortName = "CI/CD")]
-		CICD = 1,
+		CICD = 2,
 		[Display(Name = "Database", ShortName = "Database")]
-		Database = 2,
+		Database = 3,
 		[Display(Name = "Framework", ShortName = "Framework")]
 		Framework = 4,
 		[Display(Name = "Integrated Development Environment", ShortName = "IDE")]
@@ -27,28 +29,28 @@ namespace DisplayResume.Models.Enums
 		[Display(Name = "Project Management", ShortName = "Tasking")]
 		ProjectManagement = 11,
 		[Display(Name = "Service", ShortName = "Cloud Service")]
-		Service = 13,
+		Service = 12,
 		[Display(Name = "Testing Framework", ShortName = "Test framework")]
-		TestingFramework = 15,
+		TestingFramework = 13,
 		[Display(Name = "Version Control", ShortName = "Versioning")]
-		VersionControl = 16,
+		VersionControl = 14,
 		[Display(Name = "Containerization", ShortName = "Containers")]
-		Containers = 17,
+		Containers = 15,
 		[Display(Name = "Server", ShortName = "Server")]
-		Server = 18,
+		Server = 16,
 		[Display(Name = "Command Line Interface", ShortName = "CLI")]
-		CommandLineInterface = 19,
+		CommandLineInterface = 17,
 		[Display(Name = "Operating System", ShortName = "OS")]
-		OperatingSystem = 20,
+		OperatingSystem = 18,
 		[Display(Name = "Office", ShortName = "Office")]
-		Office = 21,
+		Office = 19,
 		[Display(Name = "Format", ShortName = "Format")]
-		Format = 22,
+		Format = 20,
 		[Display(Name = "Authorization", ShortName = "Auth")]
-		Authorization = 23,
+		Authorization = 21,
 		[Display(Name = "Logging Service", ShortName = "Logging")]
-		Logging = 24,
+		Logging = 22,
 		[Display(Name = "Hardware", ShortName = "Hardware")]
-		Hardware = 25
+		Hardware = 23
 	}
 }
