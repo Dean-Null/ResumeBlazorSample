@@ -7,9 +7,8 @@ namespace DisplayResume.FakerData
 	{
 		public FakerDuration()
 		{
-			UseSeed(100)
-				.RuleFor(o => o.StartDate, f => f.Date.Past())
-				.RuleFor(o => o.EndDate, f => f.Date.Future());
+			RuleFor(o => o.StartDate, f => f.Date.Past());
+			RuleFor(o => o.EndDate, f => f.Date.Future());
 		}
 	}
 }
